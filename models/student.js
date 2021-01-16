@@ -11,6 +11,21 @@ const studentSchema = new Schema({
         type: String,
         required: true
     },
+    year: {
+        type: String,
+        // required:true,
+        enum: ['1', '2', '3', '4']
+    },
+    class: {
+        type: String,
+        // required:true,
+        enum: ['CSE,IT,ECE']
+    },
+    section: {
+        type: String,
+        // required:true,
+        enum: ['1', '2', '3']
+    },
     email: {
         type: String,
         // required: true

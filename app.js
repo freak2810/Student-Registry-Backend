@@ -9,6 +9,16 @@ const MONGODB_URI = 'mongodb+srv://freak2810:Sheena&mani01@boo-boo.lx0og.mongodb
 const app = express();
 const port = 8000;
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+        'Access-Control-Allow-Methods',
+        'OPTIONS, GET, POST, PUT, PATCH, DELETE'
+    );
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(adminRoutes);
