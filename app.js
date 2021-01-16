@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 const adminRoutes = require('./routes/adminRoutes');
 
 const MONGODB_URI = 'mongodb+srv://freak2810:Sheena&mani01@boo-boo.lx0og.mongodb.net/boo-boo';
+const port = process.env.PORT || '5000';
 
 const app = express();
-const port = 8000;
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
