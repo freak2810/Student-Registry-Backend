@@ -51,7 +51,8 @@ exports.postStudent = async (req, res, next) => {
     const email = req.body.email;
     const phone = req.body.phone;
     const gender = req.body.gender;
-    const dob = req.body.dob;
+    const year = req.body.year;
+    const branch = req.body.branch;
 
     try {
 
@@ -67,7 +68,8 @@ exports.postStudent = async (req, res, next) => {
             email: email,
             phone: phone,
             gender: gender,
-            dob: dob
+            year: year,
+            branch: branch
         }).save();
 
         res.status(201).json(student);
@@ -89,11 +91,13 @@ exports.putStudent = async (req, res, next) => {
             return res.status(404).send({message: `Student with rollNo --> ${rollNo} is not found`})
         }
 
-         student.name = req.body.name || student.name;
-         student.rollNo = req.body.rollNo || student.rollNo;
-         student.email = req.body.email || student.email;
-         student.phone = req.body.phone || student.phone;
-         student.gender = req.body.gender || student.gender;
+        student.name = req.body.name || student.name;
+        student.rollNo = req.body.rollNo || student.rollNo;
+        student.email = req.body.email || student.email;
+        student.phone = req.body.phone || student.phone;
+        student.gender = req.body.gender || student.gender;
+        student.year = req.body.year || student.year;
+        student.branch = req.body.branch || student.branch;
 
         await student.save()
 
@@ -103,13 +107,6 @@ exports.putStudent = async (req, res, next) => {
         res.status(500)
             .json({message: err.message});
     }
-
-
-
-
-
-
-
 }
 
 exports.deleteStudent = async (req, res, next) => {
