@@ -22,12 +22,12 @@ const studentSchema = new Schema({
     },
     year: {
         type: String,
-        // enum: ['1', '2', '3', '4'],
+        enum: ['1', '2', '3', '4'],
         default: '4',
     },
     branch: {
         type: String,
-        // enum: ['CSE,IT,ECE'],
+        enum: ['CSE','IT','ECE'],
         default: 'CSE'
     },
     gender: {
