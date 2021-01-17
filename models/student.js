@@ -13,27 +13,30 @@ const studentSchema = new Schema({
     },
     email: {
         type: String,
-         required: true
+         // required: true
     },
     phone: {
         type: String,
-        required: true,
+        // required: true,
         maxLength: 10
     },
     year: {
         type: String,
         enum: ['1', '2', '3', '4'],
         default: '4',
+        required:true
     },
     branch: {
         type: String,
         enum: ['CSE','IT','ECE'],
-        default: 'CSE'
+        default: 'CSE',
+        required:true
     },
     gender: {
         type: String,
         enum: ['male', 'female'],
-        default: 'male'
+        default: 'male',
+        required:true
     },
 }, {
     timestamps: {
